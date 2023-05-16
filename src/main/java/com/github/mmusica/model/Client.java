@@ -1,25 +1,28 @@
 package com.github.mmusica.model;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name ="product")
-public class Product{
+@Table(name = "client")
+public class Client {
 
-    public Product() {
+    public Client()
+    {
+
     }
-
+    @Getter @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Getter @Setter
-    private Long id;
+    Long id;
+
     @Getter @Setter
     @Column(name = "name", nullable = false, length = 150)
-    private String name;
+    String name;
+
     @Getter @Setter
-    @Column(name ="quantity", nullable = false)
-    private int quantity;
+    @Column(name = "address", nullable = false)
+    String address;
+
 }

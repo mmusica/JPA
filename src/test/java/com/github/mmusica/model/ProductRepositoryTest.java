@@ -1,6 +1,7 @@
 package com.github.mmusica.model;
 
 
+import com.github.mmusica.repository.ProductRepository;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
