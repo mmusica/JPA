@@ -1,8 +1,0 @@
-com\github\mmusica\App.class
-com\github\mmusica\model\Producer.class
-com\github\mmusica\repository\ProducerRepository.class
-com\github\mmusica\repository\ClientRepository.class
-com\github\mmusica\model\Client.class
-com\github\mmusica\model\Product.class
-com\github\mmusica\interfaces\GeneralRepository.class
-com\github\mmusica\repository\ProductRepository.class
