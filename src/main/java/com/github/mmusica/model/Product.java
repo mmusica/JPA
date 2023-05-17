@@ -11,7 +11,10 @@ public class Product{
 
     public Product() {
     }
-
+    public Product(String name, int quantity) {
+        this.name = name;
+        this.quantity = quantity;
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter @Setter
@@ -22,4 +25,9 @@ public class Product{
     @Getter @Setter
     @Column(name ="quantity", nullable = false)
     private int quantity;
+
+    @Getter @Setter
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "producer_id", nullable = false)
+    private Producer producer;
 }
