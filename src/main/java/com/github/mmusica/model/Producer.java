@@ -13,14 +13,17 @@ public class Producer {
 
     public Producer() {
     }
+    public Producer(String name) {
+        this.name = name;
+    }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter @Setter
-    Long id;
+    private Long id;
     @Getter @Setter
     @Column(name = "name", nullable = false, length = 150)
-    String name;
+    private String name;
 
     @Getter @Setter
     @OneToMany(mappedBy = "producer",orphanRemoval = true,cascade = CascadeType.ALL)

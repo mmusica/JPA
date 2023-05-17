@@ -25,6 +25,7 @@ public class ProductRepositoryTest {
         var product = new Product();
         product.setName("Meat");
         product.setQuantity(4);
+        product.addProducer(new Producer("Dino1"));
         productRepository.add(product);
         Assert.assertNotNull(product.getId());
         Assert.assertTrue(product.getId() == 1);
@@ -34,6 +35,7 @@ public class ProductRepositoryTest {
         var product = new Product();
         product.setName("Milk");
         product.setQuantity(2);
+        product.addProducer(new Producer("Dino2"));
         productRepository.add(product);
         var found =  productRepository.find(product.getId());
         Assert.assertNotNull(found);
@@ -43,10 +45,12 @@ public class ProductRepositoryTest {
         var product = new Product();
         product.setName("Milk");
         product.setQuantity(2);
+        product.addProducer(new Producer("Dino3"));
         productRepository.add(product);
         var newProduct = new Product();
         newProduct.setQuantity(2);
         newProduct.setName("newMilk");
+        product.addProducer(new Producer("Loto"));
         var found =  productRepository.update(newProduct,product.getId());
         Assert.assertEquals("newMilk", found.getName());
         Assert.assertEquals(2, found.getQuantity());
@@ -56,6 +60,7 @@ public class ProductRepositoryTest {
         var product = new Product();
         product.setName("Milk");
         product.setQuantity(2);
+        product.addProducer(new Producer("Dino4"));
         productRepository.add(product);
         productRepository.delete(product);
         var found = productRepository.find(product.getId());
